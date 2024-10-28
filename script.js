@@ -1,3 +1,13 @@
+const customCursor = document.querySelector('.custom-cursor');
+
+window.addEventListener('mousemove', handleCustomCursor);
+
+function handleCustomCursor(e) {
+    setTimeout(() => {
+        customCursor.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
+    }, 60);
+}
+
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         if (e.target.tagName.toLowerCase() === 'a') {
